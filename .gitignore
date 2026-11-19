@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Environment and sensitive keys
+.env
+credentials.md
+
+# Operating System files
+Thumbs.db
+.DS_Store

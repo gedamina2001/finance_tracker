@@ -1,0 +1,17 @@
+{
+  "name": "finance-tracker",
+  "version": "1.0.0",
+  "description": "Personal finance tracker with Express, Tailwind CSS, and Supabase",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
