@@ -37,6 +37,12 @@ function getCurrentMonthString() {
   return `${year}-${month}`;
 }
 
+// Helper: Use the local calendar date for transaction defaults.
+function getTodayDateString() {
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+}
+
 // Helper: Format Currency (INR)
 function formatCurrency(amount) {
   return new Intl.NumberFormat('en-IN', {
@@ -295,6 +301,8 @@ monthPicker.addEventListener('change', (e) => {
 });
 
 resetBtn.addEventListener('click', () => {
+  transactionForm.reset();
+  formDate.value = getTodayDateString();
   currentMonth = getCurrentMonthString();
   monthPicker.value = currentMonth;
   loadTransactions();
@@ -305,8 +313,7 @@ resetBtn.addEventListener('click', () => {
 // -----------------------------------------------------------------------------
 window.addEventListener('DOMContentLoaded', () => {
   // Set today as default date in form
-  const today = new Date().toISOString().split('T')[0];
-  formDate.value = today;
+  formDate.value = getTodayDateString();
 
   // Set month picker
   monthPicker.value = currentMonth;
